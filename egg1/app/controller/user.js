@@ -20,6 +20,24 @@ class UserController extends Controller {
       }, 2000);
     });
   }
+
+  // 自由传参模式
+  async getUser() {
+    const { ctx } = this;
+    ctx.body = ctx.query;
+  }
+
+  // 严格传参模式
+  // http://127.0.0.1:7001/user/zz/16  这样的路由样式
+  async getUserProfile() {
+    const { ctx } = this;
+    const { name, age } = ctx.params;
+    ctx.body = { // 接收多个参数
+      name: name,
+      age: age
+    };
+  }
+
 }
 
 module.exports = UserController;
