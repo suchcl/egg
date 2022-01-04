@@ -14,4 +14,5 @@ module.exports = app => {
   router.get("/user/getUser", controller.user.getUser);
   // 严格传参模式路由注册
   router.get("/user/:name/:age", controller.user.getUserProfile);
+  router.post("/addStudent", controller.user.addStu);
 };

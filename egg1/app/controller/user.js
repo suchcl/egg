@@ -38,6 +38,14 @@ class UserController extends Controller {
     };
   }
 
+  async addStu() {
+    const { ctx } = this;
+    ctx.body = {
+      status: 200,
+      data: ctx.request.body
+    };
+  }
+
 }
 
 module.exports = UserController;

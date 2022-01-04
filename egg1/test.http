@@ -1,0 +1,14 @@
+POST http://127.0.0.1:7001/addStudent
+# Content-Type: application/x-www-form-urlencoded
+# Content-Type 还可以是JSON格式，在传递参数时就需要是json格式
+Content-Type: application/json
+
+# 表单格式的传参方式
+# name=wangwu
+
+# json格式的传参方式
+{
+    "name": "Liuer",
+    "age": 23,
+    "job": "Programmer"
+}
