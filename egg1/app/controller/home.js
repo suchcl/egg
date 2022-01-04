@@ -5,12 +5,12 @@ const Controller = require('egg').Controller;
 class HomeController extends Controller {
   async index() {
     const { ctx } = this;
-    ctx.body = 'hi, Hello world  sss';
+    ctx.body = 'hi, egg';
   }
 
   async newsList() {
     const { ctx } = this;
-    ctx.body = "新闻消息";
+    ctx.body = '新闻消息';
   }
 }
 
