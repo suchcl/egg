@@ -24,7 +24,13 @@ class UserController extends Controller {
   // 自由传参模式
   async getUser() {
     const { ctx } = this;
-    ctx.body = ctx.query;
+    // console.log(ctx);
+    const id = ctx.query.id;
+    const res = await ctx.service.user.getUser(id);
+    // 上面获取service的方法，也可以通过结构来获取到user，然后通过user来调用里面的方法
+    // const { user } = ctx.service;
+    // const res = await user.getUser(id);
+    ctx.body = res;
   }
 
   // 严格传参模式
