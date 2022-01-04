@@ -12,6 +12,11 @@ class HomeController extends Controller {
     const { ctx } = this;
     ctx.body = '新闻消息';
   }
+
+  async useEjs(){
+    const {ctx} = this;
+    await ctx.render("home.html");
+  }
 }
 
 module.exports = HomeController;

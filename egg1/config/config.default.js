@@ -24,6 +24,18 @@ module.exports = appInfo => {
       enable: false
     }
   };
+
+  // ejs模板引擎配置
+  config.view = {
+    mapping: {
+      ".html": "ejs"
+    }
+  };
+
+  config.ejs = {
+    
+  };
+
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
