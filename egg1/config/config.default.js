@@ -33,8 +33,13 @@ module.exports = appInfo => {
   };
 
   config.ejs = {
-    
+
   };
+
+  // 静态资源的默认存在位置
+  // config.static = {
+  //   prefix: "/assets/"
+  // };
 
   // add your user config here
   const userConfig = {
