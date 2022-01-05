@@ -8,5 +8,14 @@
   </head>
   <body>
     <h3>Ejs 引擎44446666tttt</h3>
+    <h3>用户信息</h3>
+    <ul>
+      <li>编号：<%= id%></li></li>
+      <li>姓名：<%= name%></li>
+      <li>年龄：<%= age%></li>
+      <% for(var i = 0; i < skill.length; i++) {%>
+      <li><%= skill[i] %></li>
+      <% } %>
+    </ul>
   </body>
 </html>
