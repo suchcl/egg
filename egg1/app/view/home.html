@@ -9,6 +9,12 @@
   </head>
   <body>
     <% include header.html %>
+    <div class="btn-erea">
+      <button onclick="add();">添加cookie</button>
+      <button onclick="del();">删除cookie</button>
+      <button onclick="edit();">修改cookie</button>
+      <button onclick="show();">查看cookie</button>
+    </div>
     <h3>用户信息</h3>
     <ul>
       <li>编号：<%= id%></li></li>
@@ -19,5 +25,42 @@
       <% } %>
     </ul>
     <% include template/footer.html %>
+    <script>
+      function add() {
+        fetch("/add",{
+          method: "POST",
+          headers:{
+            "Content-Type": "application/json"
+          }
+        })
+      }
+
+      function del() {
+        fetch("/del",{
+          method: "POST",
+          headers:{
+            "Content-Type": "application/json"
+          }
+        })
+      }
+
+      function edit() {
+        fetch("/edit2",{
+          method: "POST",
+          headers:{
+            "Content-Type": "application/json"
+          }
+        })
+      }
+
+      function show() {
+        fetch("/show",{
+          method: "POST",
+          headers:{
+            "Content-Type": "application/json"
+          }
+        })
+      }
+    </script>
   </body>
 </html>

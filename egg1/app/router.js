@@ -16,4 +16,9 @@ module.exports = app => {
   router.get("/user/:name/:age", controller.user.getUserProfile);
   router.post("/addStudent", controller.user.addStu);
   router.get("/useEjs", controller.home.useEjs);
+
+  router.post("/add", controller.home.add);
+  router.post("/del", controller.home.del);
+  router.post("/edit2", controller.home.edit);
+  router.post("/show", controller.home.show);
 };

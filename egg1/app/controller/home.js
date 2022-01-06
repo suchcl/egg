@@ -24,6 +24,42 @@ class HomeController extends Controller {
       ]
     });
   }
+
+  async add() {
+    const { ctx } = this;
+    ctx.cookies.set("user", "Nicholas Zakas");
+    ctx.body = {
+      status: 200,
+      data: "Cookie添加成功"
+    };
+  }
+
+  async del() {
+    const { ctx } = this;
+    ctx.cookies.set("user", null);
+    ctx.body = {
+      status: 200,
+      data: "Cookie删除成功"
+    };
+  }
+
+  async edit() {
+    const { ctx } = this;
+    ctx.cookies.set("user", "c3333ookie");
+    ctx.body = {
+      status: 200,
+      data: "Cookie修改成功"
+    };
+  }
+
+  async show() {
+    const { ctx } = this;
+    const cookie = ctx.cookies.get("user");
+    ctx.body = {
+      status: 200,
+      data: cookie
+    };
+  }
 }
 
 module.exports = HomeController;
