@@ -36,6 +36,13 @@ module.exports = appInfo => {
 
   };
 
+  config.session = {
+    key: "WODESHEN_SESS",
+    httpOnly: true,
+    renew: true,
+    maxAge: 1000 * 120
+  };
+
   // 静态资源的默认存在位置
   // config.static = {
   //   prefix: "/assets/"
