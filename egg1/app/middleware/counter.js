@@ -1,3 +1,4 @@
+"use strict";
 module.exports = optons => {
     return async (ctx, next) => {
         if (ctx.session.counter) {

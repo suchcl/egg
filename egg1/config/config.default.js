@@ -16,7 +16,12 @@ module.exports = appInfo => {
   config.keys = appInfo.name + "_1641222489270_9845";
 
   // 配置中间件，不需要导入，直接将写好的中间名名称放到这里即可
-  config.middleware = ["counter"];
+  // 这里配置的中间件全局生效
+  /**
+   * 如果想中间件只在某个路由生效，可以在路由文件中配置，这里就不能在配置了
+   */
+  // config.middleware = ["counter"];
+  config.middleware = [];
 
   // CSRF
   config.security = {
