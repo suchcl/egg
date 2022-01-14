@@ -1,6 +1,6 @@
 /* eslint valid-jsdoc: "off" */
 
-'use strict';
+"use strict";
 
 /**
  * @param {Egg.EggAppInfo} appInfo app info
@@ -13,10 +13,10 @@ module.exports = appInfo => {
   const config = exports = {};
 
   // use for cookie sign key, should change to your own and keep security
-  config.keys = appInfo.name + '_1641222489270_9845';
+  config.keys = appInfo.name + "_1641222489270_9845";
 
-  // add your middleware config here
-  config.middleware = [];
+  // 配置中间件，不需要导入，直接将写好的中间名名称放到这里即可
+  config.middleware = ["counter"];
 
   // CSRF
   config.security = {

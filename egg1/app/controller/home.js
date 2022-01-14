@@ -38,7 +38,7 @@ class HomeController extends Controller {
     });
 
     // 添加session
-    ctx.session.username="Nicholas 第二";
+    ctx.session.username = "Nicholas 第二";
     ctx.body = {
       status: 200,
       data: "Cookie添加成功"
@@ -69,9 +69,9 @@ class HomeController extends Controller {
 
   async show() {
     const { ctx } = this;
-    const cookie = ctx.cookies.get("user",{
+    const cookie = ctx.cookies.get("user", {
       // 读取cookie，需要解密，encrypt在设置的时候的功能是加密，在读取cookie的时候作用是解密
-      encrypt:true
+      encrypt: true
     });
     ctx.body = {
       status: 200,
