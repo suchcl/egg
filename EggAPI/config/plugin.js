@@ -10,4 +10,10 @@ module.exports = {
     enable: true,
     package: 'egg-mysql',
   },
+
+  // 配置跨域
+  cors: {
+    enable: true,
+    package: 'egg-cors',
+  },
 };

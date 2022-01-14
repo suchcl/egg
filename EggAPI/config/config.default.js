@@ -35,6 +35,19 @@ module.exports = appInfo => {
     agent: false,
   };
 
+  // 配置跨域，跨域了，就降低了安全级别了
+  config.security = {
+    csrf: {
+      enable: false,
+      ignoreJSON: true,
+    },
+    domainWhiteList: ['http://localhost:8080'],
+  };
+  config.cors = {
+    origin: '*',
+    allowMethods: 'GET,POST,PUT,DELETE,PATCH',
+  };
+
   return {
     ...config,
     ...userConfig,
