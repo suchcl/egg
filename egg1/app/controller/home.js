@@ -14,11 +14,14 @@ class HomeController extends Controller {
   }
 
   async useEjs() {
-    const { ctx } = this;
+    const { ctx, app } = this;
     // 获取session，并返回给客户端去显示
     const username = ctx.session.username;
-    console.log(ctx.session.counter);
     await ctx.render("home.html", {
+      // 调用扩展的currentTime()方法，不需要单独引入，只要在app/extend/目录中定义了就可以
+      currentTime: app.currentTime(),
+      // 通过扩展的属性获取当前时间
+      nowTime: app.nowTime,
       id: 1000,
       name: "王五",
       age: 16,

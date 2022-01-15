@@ -1,68 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
-    <link rel="stylesheet" type="text/css" href="public/css/reset.css">
-  </head>
-  <body>
-    <% include header.html %>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+  <link rel="stylesheet" type="text/css" href="public/css/reset.css">
+</head>
+
+<body>
+  <% include header.html %>
     <!-- 展示从服务端返回的session -->
     session:<%= username%>
-    <div class="btn-erea">
-      <button onclick="add();">添加cookie</button>
-      <button onclick="del();">删除cookie</button>
-      <button onclick="edit();">修改cookie</button>
-      <button onclick="show();">查看cookie</button>
-    </div>
-    <h3>用户信息</h3>
-    <ul>
-      <li>编号：<%= id%></li></li>
-      <li>姓名：<%= name%></li>
-      <li>年龄：<%= age%></li>
-      <% for(var i = 0; i < skill.length; i++) {%>
-      <li><%= skill[i] %></li>
-      <% } %>
-    </ul>
-    <% include template/footer.html %>
-    <script>
-      function add() {
-        fetch("/add",{
-          method: "POST",
-          headers:{
-            "Content-Type": "application/json"
+      <!-- 显示扩展的currentTime()方法 -->
+      <div>
+        <p>通过扩展application方法获取现在时间：<%= currentTime%>
+        </p>
+        <p>
+          <!-- 通过扩展的nowTime属性来显示当前时间 -->
+          通过扩展的nowTime属性获取现在时间:<%= nowTime%>
+        </p>
+      </div>
+      <div class="btn-erea">
+        <button onclick="add();">添加cookie</button>
+        <button onclick="del();">删除cookie</button>
+        <button onclick="edit();">修改cookie</button>
+        <button onclick="show();">查看cookie</button>
+      </div>
+      <h3>用户信息</h3>
+      <ul>
+        <li>编号：<%= id%>
+        </li>
+        </li>
+        <li>姓名：<%= name%>
+        </li>
+        <li>年龄：<%= age%>
+        </li>
+        <% for(var i=0; i < skill.length; i++) {%>
+          <li>
+            <%= skill[i] %>
+          </li>
+          <% } %>
+      </ul>
+      <% include template/footer.html %>
+        <script>
+          function add() {
+            fetch("/add", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json"
+              }
+            })
           }
-        })
-      }
 
-      function del() {
-        fetch("/del",{
-          method: "POST",
-          headers:{
-            "Content-Type": "application/json"
+          function del() {
+            fetch("/del", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json"
+              }
+            })
           }
-        })
-      }
 
-      function edit() {
-        fetch("/edit2",{
-          method: "POST",
-          headers:{
-            "Content-Type": "application/json"
+          function edit() {
+            fetch("/edit2", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json"
+              }
+            })
           }
-        })
-      }
 
-      function show() {
-        fetch("/show",{
-          method: "POST",
-          headers:{
-            "Content-Type": "application/json"
+          function show() {
+            fetch("/show", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json"
+              }
+            })
           }
-        })
-      }
-    </script>
-  </body>
+        </script>
+</body>
+
 </html>
