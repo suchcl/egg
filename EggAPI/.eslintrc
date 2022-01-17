@@ -10,6 +10,7 @@
       1,
       "never"
     ],
+    // 双引号
     "quotes": [
       1,
       "double"
