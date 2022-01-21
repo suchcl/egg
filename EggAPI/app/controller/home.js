@@ -9,10 +9,15 @@ class HomeController extends Controller {
   }
 
   async getUser() {
+    console.time("start");
     const { ctx } = this;
-    // const userInfo = await this.app.mysql.get("user", { id: 2 });
-    const sql = "select * from user";
+    // const id = ctx.request.query.id;
+    // 获取客户端通过query方式请求的参数
+    const id = ctx.request.query.id;
+    console.log("id:", id);
+    const sql = "select * from user where id = " + id;
     const userInfo = await this.app.mysql.query(sql);
+    console.timeEnd("start");
     ctx.body = {
       code: 1,
       data: {
